@@ -43,8 +43,30 @@ $(document).ready(function() {
     });
     $('.hidden-menu_close').click(function() {
         $('.hidden-menu').removeClass('nav-show');
-        // $('body').css('overflow','visible');
         $('.overlay').fadeOut();
+    });
+
+    $('.sections-item').mouseenter(function(){
+        $(this).addClass('active');
+        $(this).find('.sections-blur').stop().fadeOut();
+        $(this).find('.sections-menu').stop().fadeIn();
+        $(this).find('.sections-arrow').stop().fadeOut();
+
+    });
+    $('.sections-item').mouseleave(function(){
+        $(this).removeClass('active');
+        $(this).find('.sections-blur').stop().fadeIn();
+        $(this).find('.sections-menu').css('display','none');
+        $(this).find('.sections-arrow').stop().fadeIn();
+    });
+
+    $('.header-main_link a').click(function(e){
+        e.preventDefault();
+        var currentBlock = $("#sections");
+        var currentBlockoffset = $(currentBlock).offset().top;
+        $("html, body").animate({
+    		scrollTop: currentBlockoffset
+    	}, 500);
     });
 
     //

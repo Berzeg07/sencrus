@@ -1,4 +1,7 @@
 @charset "UTF-8";
+/*======================================
+  Selectric
+======================================*/
 a,
 abbr,
 acronym,
@@ -422,7 +425,7 @@ nav ul {
   left: 50%;
   transform: translateX(-50%);
   cursor: pointer;
-  bottom: 30%;
+  bottom: 5%;
 }
 
 @media (min-width: 992px) {
@@ -757,7 +760,8 @@ nav ul {
   }
 }
 
-.footer p, .footer a {
+.footer a,
+.footer p {
   font-family: 'Open Sans', sans-serif;
   font-size: 12px;
   font-weight: 400;
@@ -949,6 +953,39 @@ nav ul {
   margin-bottom: 21px;
 }
 
+.footer-contact_info b {
+  position: relative;
+  padding-left: 20px;
+  transition: 0.5s;
+}
+
+.footer-contact_info b:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -4px;
+  width: 12px;
+  height: 18px;
+  background: url("../img/marker.png") no-repeat center;
+  transition: 0.5s;
+}
+
+.footer-contact_info .footer-adress {
+  padding-left: 0 !important;
+}
+
+.footer-contact_info .footer-adress span {
+  transition: 0.5s;
+}
+
+.footer-contact_info .footer-adress:hover b:after {
+  transform: scale(0.5);
+}
+
+.footer-contact_info .footer-adress:hover span {
+  transform: scale(1.1);
+}
+
 .footer-contact_info span {
   display: inline-block;
   margin-top: 7px;
@@ -956,7 +993,7 @@ nav ul {
 }
 
 .footer-social {
-  max-width: 120px;
+  max-width: 160px;
   width: 100%;
   display: -webkit-flex;
   display: -ms-flex;
@@ -974,250 +1011,262 @@ nav ul {
   margin-bottom: 15px;
 }
 
-/*======================================
-  Selectric
-======================================*/
-.selectric-wrapper {
-  position: relative;
-  cursor: pointer;
+@media (min-width: 1200px) {
+  .sections {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    height: 100vh;
+  }
+}
+
+.sections-title {
+  font-family: "BebasNeueBold";
+  color: #ffffff;
+  font-size: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
   text-align: center;
-  display: inline-block;
-}
-
-.selectric-responsive {
   width: 100%;
+  transition: 0.5s;
 }
 
-.selectric {
-  border-radius: 0;
-  position: relative;
-  display: inline-block;
-  padding: 0 20px 0 0;
-  margin-left: 5px;
+@media (min-width: 1400px) {
+  .sections-title {
+    font-size: 30px;
+  }
 }
 
-.selectric:after {
+.sections-blur {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.sections .sections-arrow {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 30px;
+  z-index: 11;
+}
+
+@media (min-width: 1200px) {
+  .sections .sections-arrow {
+    bottom: 40%;
+  }
+}
+
+.sections .sections-arrow_inner {
   content: "";
   position: absolute;
-  bottom: -5px;
-  left: 0;
+  width: 200px;
   height: 1px;
+  background: white;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10px;
+  z-index: 11;
+}
+
+@media (min-width: 1280px) {
+  .sections .sections-arrow_inner {
+    width: 180px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .sections .sections-arrow_inner {
+    width: 270px;
+  }
+}
+
+.sections-item {
   width: 100%;
-  background: #3D3D3D;
-  z-index: 1;
-}
-
-.selectric .label {
-  display: inline-block;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  font-size: 17px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.selectric .button {
-  display: block;
-  position: absolute;
-  right: -10px;
-  top: -10px;
-  width: 38px;
-  height: 38px;
-  line-height: 38px;
-  color: #BBB;
-  text-align: center;
-  font: 0/0 a;
-  *font: 20px/38px Lucida Sans Unicode, Arial Unicode MS, Arial;
-}
-
-.selectric .button:after {
-  content: " ";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-  width: 0;
-  height: 0;
-  border: 4px solid transparent;
-  border-top-color: #3D3D3D;
-  border-bottom: none;
-}
-
-.selectric-focus .selectric {
-  border-color: #aaaaaa;
-}
-
-.selectric-hover .selectric {
-  border-color: #c4c4c4;
-}
-
-.selectric-hover .selectric .button {
-  color: #a2a2a2;
-}
-
-.selectric-hover .selectric .button:after {
-  border-top-color: #a2a2a2;
-}
-
-.selectric-open {
-  z-index: 9999;
-}
-
-.selectric-open .selectric {
-  border-color: #c4c4c4;
-}
-
-.selectric-open .selectric-items {
-  display: block;
-}
-
-.selectric-disabled {
-  filter: alpha(opacity=50);
-  opacity: 0.5;
-  cursor: default;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.selectric-hide-select {
+  min-height: 200px;
   position: relative;
-  overflow: hidden;
-  width: 0;
-  height: 0;
+  transition: 0.5s;
+  background: black;
 }
 
-.selectric-hide-select select {
-  position: absolute;
-  left: -100%;
+@media (min-width: 1200px) {
+  .sections-item {
+    width: 20%;
+    min-height: unset;
+    height: 100%;
+  }
 }
 
-.selectric-hide-select.selectric-is-native {
-  position: absolute;
-  width: 100%;
+.sections-item:first-child .sections-blur {
+  background: url("../img/s-1.png") no-repeat center;
+  background-size: cover;
+}
+
+.sections-item:first-child .sections-menu {
+  background: url("../img/1_1.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.sections-item:nth-child(2) .sections-blur {
+  background: url("../img/s-2.png") no-repeat center;
+  background-size: cover;
+}
+
+.sections-item:nth-child(2) .sections-menu {
+  background: url("../img/2_1.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.sections-item:nth-child(3) .sections-blur {
+  background: url("../img/s-3.png") no-repeat center;
+  background-size: cover;
+}
+
+.sections-item:nth-child(3) .sections-menu {
+  background: url("../img/3_1.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.sections-item:nth-child(4) .sections-blur {
+  background: url("../img/s-4.png") no-repeat center;
+  background-size: cover;
+}
+
+.sections-item:nth-child(4) .sections-menu {
+  background: url("../img/4_1.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.sections-item:nth-child(5) .sections-blur {
+  background: url("../img/s-5.png") no-repeat center;
+  background-size: cover;
+}
+
+.sections-item:nth-child(5) .sections-menu {
+  background: url("../img/5_1.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.sections-menu {
   height: 100%;
-  z-index: 10;
-}
-
-.selectric-hide-select.selectric-is-native select {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  border: none;
-  z-index: 1;
-  box-sizing: border-box;
-  opacity: 0;
-}
-
-.selectric-input {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  overflow: hidden !important;
-  clip: rect(0, 0, 0, 0) !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  width: 1px !important;
-  height: 1px !important;
-  outline: none !important;
-  border: none !important;
-  *font: 0/0 a !important;
-  background: none !important;
-}
-
-.selectric-temp-show {
-  position: absolute !important;
-  visibility: hidden !important;
-  display: block !important;
-}
-
-/* Items box */
-.selectric-items {
+  background-size: cover;
   display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
+  padding-top: 100px;
+}
+
+@media (min-width: 1200px) {
+  .sections-menu {
+    padding-top: 180px;
+  }
+}
+
+.sections-menu_links {
+  width: 50%;
+}
+
+.sections-menu_links:nth-child(1) {
+  text-align: right;
+  border-right: 1px solid white;
+}
+
+.sections-menu_links:nth-child(1) a {
+  padding-right: 20px;
+}
+
+@media (min-width: 1200px) {
+  .sections-menu_links:nth-child(1) a {
+    padding-right: 30px;
+  }
+}
+
+.sections-menu_links:nth-child(2) a {
+  padding-left: 20px;
+}
+
+@media (min-width: 1200px) {
+  .sections-menu_links:nth-child(2) a {
+    padding-left: 30px;
+  }
+}
+
+.sections-menu_links a {
+  font-family: "BebasNeueBold";
+  font-size: 15px;
+  display: inline-block;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+@media (min-width: 1200px) {
+  .sections-menu_links a {
+    font-size: 24px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .sections-menu_links a {
+    font-size: 24px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+}
+
+.sections-menu_links a:hover {
   background: white;
-  border: 1px solid #3D3D3D;
-  z-index: 10;
+  color: black;
 }
 
-.selectric-items .selectric-scroll {
-  height: 100%;
-  overflow: auto;
+.sections-menu_item:first-child {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
-.selectric-above .selectric-items {
-  top: auto;
-  bottom: 100%;
+.sections-menu_item:last-child {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: center;
 }
 
-.selectric-items li,
-.selectric-items ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  font-size: 12px;
-  line-height: 20px;
-  min-height: 20px;
+.sections-menu_btn {
+  width: 158px;
+  height: 39px;
+  display: inline-block;
+  text-align: center;
+  margin: 0 auto;
+  line-height: 39px;
+  color: white;
+  border: 1px solid #ffffff;
+  font-family: "BebasNeueBold";
+  font-size: 18px;
+  margin-bottom: 30px;
 }
 
-.selectric-items li {
-  display: block;
-  padding: 6px;
-  font-size: 17px;
-  cursor: pointer;
+.sections-item.active {
+  width: 100%;
 }
 
-.selectric-items li.selected {
-  background: white;
+@media (min-width: 1200px) {
+  .sections-item.active {
+    width: 40%;
+  }
 }
 
-.selectric-items li.highlighted {
-  background: white;
-}
-
-.selectric-items li:hover {
-  background: white;
-}
-
-.selectric-items .disabled {
-  filter: alpha(opacity=50);
-  opacity: 0.5;
-  cursor: default !important;
-  background: none !important;
-  color: #666 !important;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.selectric-items .selectric-group .selectric-group-label {
-  font-weight: bold;
-  padding-left: 10px;
-  cursor: default;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background: none;
-  color: #444;
-}
-
-.selectric-items .selectric-group.disabled li {
-  filter: alpha(opacity=100);
-  opacity: 1;
-}
-
-.selectric-items .selectric-group li {
-  padding-left: 25px;
+.sections-item.active .sections-title {
+  top: 10%;
 }
