@@ -1,0 +1,22 @@
+.header
+	include menu.pug
+	.header-item.header-item_left
+		.header-logo
+			img(src="img/header-logo.png")
+		p.main-title Типовая страница каталога название        
+	.header-item.header-item_right
+		.header-item_inner
+			a(href="tel:3432870666").header-phone (343) 
+				span 2-870-666
+			a(href="mailto:senkrus@gmail.com").header-email 
+				|e-mail: 
+				span senkrus@gmail.com
+		.header-item_inner
+			.header-main_search__item
+				input(type="text")
+			.header-catLink
+				img(src="img/cat-link.png")        
+			.hamburger.burger-main#hamburger
+				span.line
+				span.line
+				span.line

@@ -1,4 +1,16 @@
 $(document).ready(function() {
+
+    $('#select').hover(function() {
+        $('.selectList-dropdown').stop().slideToggle();
+        var link = $('.selectList-dropdown a');
+        $(link).click(function() {
+            $(link).removeClass('active');
+            $(this).toggleClass('active');
+            var linkText = $(this).html();
+            var selectText = $(this).parents('.selectList').find('#select span').html(linkText);
+        });
+    });
+
     var menuSearch = $('.search-menu input');
     var menuSearchHeader = $(".header-main_search__item input")
     $('.search-menu').click(function() {
@@ -31,7 +43,7 @@ $(document).ready(function() {
     // Mobile menu =============================================================
     $('.burger-main').click(function() {
         $('.hidden-menu').toggleClass('nav-show');
-        $('.hidden-menu').css('width','100%');
+        $('.hidden-menu').css('width', '100%');
         // $('body').css('overflow','hidden');
         $('.overlay').fadeIn();
     });
@@ -46,28 +58,42 @@ $(document).ready(function() {
         $('.overlay').fadeOut();
     });
 
-    $('.sections-item').mouseenter(function(){
+    $('.sections-item').mouseenter(function() {
         $(this).addClass('active');
         $(this).find('.sections-blur').stop().fadeOut();
         $(this).find('.sections-menu').stop().fadeIn();
         $(this).find('.sections-arrow').stop().fadeOut();
 
     });
-    $('.sections-item').mouseleave(function(){
+    $('.sections-item').mouseleave(function() {
         $(this).removeClass('active');
         $(this).find('.sections-blur').stop().fadeIn();
-        $(this).find('.sections-menu').css('display','none');
+        $(this).find('.sections-menu').css('display', 'none');
         $(this).find('.sections-arrow').stop().fadeIn();
     });
 
-    $('.header-main_link a').click(function(e){
+    $('.header-main_link a').click(function(e) {
         e.preventDefault();
-        var currentBlock = $("#sections");
+        scrollTo('#sections');
+    });
+
+    $('#toCatList').click(function(e) {
+        e.preventDefault();
+        scrollTo('.catalog-title');
+    });
+    $('.catalog-arrow').click(function() {
+        scrollTo('.catalog-title');
+    });
+
+    function scrollTo(id) {
+        var currentBlock = $(id);
         var currentBlockoffset = $(currentBlock).offset().top;
         $("html, body").animate({
-    		scrollTop: currentBlockoffset
-    	}, 500);
-    });
+            scrollTop: currentBlockoffset
+        }, 500);
+    }
+
+
 
     //
     // // send message ============================================================
