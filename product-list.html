@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Каталог</title>
+    <title>Страница товаров</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/css/swiper.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&amp;amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <div class="header">
+    <div class="headerProdList">
       <div class="hidden-menu">
         <div class="hidden-menu_item">
           <div class="hamburger hidden-menu_close is-active" id="hamburger"><span class="line"></span><span class="line"></span><span class="line"></span></div>
@@ -46,15 +46,12 @@
           <div class="hidden-menu_social"><a href="#"><img src="img/fb-icon.png"></a><a href="#"><img src="img/twitt-icon.png"></a><a href="#"><img src="img/inst-icon.png"></a><a href="#"><img src="img/g-icon.png"></a></div>
         </div>
       </div>
-      <div class="header-item header-item_left">
-        <div class="header-logo"><img src="img/header-logo.png"></div>
-        <p class="main-title">Типовая страница каталога название</p>
-      </div>
-      <div class="header-item header-item_right">
-        <div class="header-item_right__inner">
-          <div class="header-item_inner" id="contactHeader"><a class="header-phone" href="tel:3432870666">(343) <span>2-870-666</span></a><a class="header-email" href="mailto:senkrus@gmail.com">
-               e-mail: <span>senkrus@gmail.com</span></a></div>
-          <div class="header-item_inner headerRight-box">
+      <div class="headerProdList-inner">
+        <div class="headerProdList-item">
+          <p class="main-title">Перечень товаров (название)        </p>
+        </div>
+        <div class="headerProdList-item">
+          <div class="headerRight-box headerRight-box_headerProdList">
             <div class="header-main_search__item">
               <input type="text">
             </div>
@@ -64,128 +61,93 @@
         </div>
       </div>
     </div>
-    <div class="catalogInfo">
-      <div class="catalogInfo-item"><img src="img/cat-bg.jpg"></div>
-      <div class="catalogInfo-item"><a class="toCatList" href="#" id="toCatList"> Перейти к категориям товаров</a>
-        <h2 class="main-title">общая информация о товарах</h2>
-        <p>
-           consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla </p>
-        <p>
-           consequat massa quis enim. <b>Donec pede justo, </b>fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum sempernisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus </p>
-        <p>
-           viverra nulla ut metus varius laoreet. Quisque rutrum. <b>Aenean imperdiet. </b>Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, </p>
-        <p>
-           blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sa</p>
-        <p>
-           consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla </p>
-        <p>
-           consequat massa quis enim. <b>Donec pede justo, </b>fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras </p>
-      </div>
-    </div>
-    <div class="catalog-title">
-      <div class="catalog-arrow">
-        <div class="catalog-arrow_inner"></div>
-        <div class="arrow"></div>
-      </div>
-      <h2 class="main-title">Категории товаров (название)</h2>
-    </div>
-    <div class="selectList-wrap">
-      <div class="selectList">
-        <div class="selectList-item"><span>Сортировать</span></div>
-        <div class="selectList-item" id="select"><span>Показать все категории</span>
-          <ul class="selectList-dropdown">
-            <li><a href="#">Тест-1</a></li>
-            <li><a href="#">Тест-2</a></li>
-            <li><a href="#">Тест-3</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="catalogList-wrap">
-      <div class="catalogList" id="catalog-list">
+    <div class="catalogList-wrap productList-wrap">
+      <h1 class="main-title productList-title">Перечень товаров (название) </h1>
+      <div class="linkToCat"><a href="#">вернуться к выбору типа продукции</a></div>
+      <div class="catalogList">
         <div class="catalogList-item">
           <div class="catalogList-box">
-            <div class="catalogList-img"><img src="img/cat-prod.jpg">
+            <div class="catalogList-img"><img src="img/product-img.jpg">
               <div class="catalogList-img_overlay">   </div>
             </div>
             <div class="catalogList-info"> 
-              <h2 class="main-title">Наименование типа</h2>
+              <h2 class="main-title">Наименование товара</h2>
               <p>Viverra nulla ut metus varius laoreet. Quisque <b>Aenean imperdiet.</b></p><a class="btn" href="#">Перейти в раздел </a>
             </div>
           </div>
           <div class="catalogList-box">
-            <div class="catalogList-img"><img src="img/cat-prod.jpg">
+            <div class="catalogList-img"><img src="img/product-img.jpg">
               <div class="catalogList-img_overlay">   </div>
             </div>
             <div class="catalogList-info"> 
-              <h2 class="main-title">Наименование типа</h2>
+              <h2 class="main-title">Наименование товара</h2>
               <p>Viverra nulla ut metus varius laoreet. Quisque <b>Aenean imperdiet.</b></p><a class="btn" href="#">Перейти в раздел  </a>
             </div>
           </div>
           <div class="catalogList-box">
-            <div class="catalogList-img"><img src="img/cat-prod.jpg">
+            <div class="catalogList-img"><img src="img/product-img.jpg">
               <div class="catalogList-img_overlay">   </div>
             </div>
             <div class="catalogList-info"> 
-              <h2 class="main-title">Наименование типа</h2>
+              <h2 class="main-title">Наименование товара</h2>
               <p>Viverra nulla ut metus varius laoreet. Quisque <b>Aenean imperdiet.</b></p><a class="btn" href="#">Перейти в раздел  </a>
             </div>
           </div>
         </div>
         <div class="catalogList-item">
           <div class="catalogList-box">
-            <div class="catalogList-img"><img src="img/cat-prod.jpg">
+            <div class="catalogList-img"><img src="img/product-img.jpg">
               <div class="catalogList-img_overlay">   </div>
             </div>
             <div class="catalogList-info"> 
-              <h2 class="main-title">Наименование типа</h2>
+              <h2 class="main-title">Наименование товара</h2>
               <p>Viverra nulla ut metus varius laoreet. Quisque <b>Aenean imperdiet.</b></p><a class="btn" href="#">Перейти в раздел </a>
             </div>
           </div>
           <div class="catalogList-box">
-            <div class="catalogList-img"><img src="img/cat-prod.jpg">
+            <div class="catalogList-img"><img src="img/product-img.jpg">
               <div class="catalogList-img_overlay">   </div>
             </div>
             <div class="catalogList-info"> 
-              <h2 class="main-title">Наименование типа</h2>
+              <h2 class="main-title">Наименование товара</h2>
               <p>Viverra nulla ut metus varius laoreet. Quisque <b>Aenean imperdiet.</b></p><a class="btn" href="#">Перейти в раздел  </a>
             </div>
           </div>
           <div class="catalogList-box">
-            <div class="catalogList-img"><img src="img/cat-prod.jpg">
+            <div class="catalogList-img"><img src="img/product-img.jpg">
               <div class="catalogList-img_overlay">   </div>
             </div>
             <div class="catalogList-info"> 
-              <h2 class="main-title">Наименование типа</h2>
+              <h2 class="main-title">Наименование товара</h2>
               <p>Viverra nulla ut metus varius laoreet. Quisque <b>Aenean imperdiet.</b></p><a class="btn" href="#">Перейти в раздел   </a>
             </div>
           </div>
         </div>
         <div class="catalogList-item">
           <div class="catalogList-box">
-            <div class="catalogList-img"><img src="img/cat-prod.jpg">
+            <div class="catalogList-img"><img src="img/product-img.jpg">
               <div class="catalogList-img_overlay">   </div>
             </div>
             <div class="catalogList-info"> 
-              <h2 class="main-title">Наименование типа</h2>
+              <h2 class="main-title">Наименование товара</h2>
               <p>Viverra nulla ut metus varius laoreet. Quisque <b>Aenean imperdiet.</b></p><a class="btn" href="#">Перейти в раздел </a>
             </div>
           </div>
           <div class="catalogList-box">
-            <div class="catalogList-img"><img src="img/cat-prod.jpg">
+            <div class="catalogList-img"><img src="img/product-img.jpg">
               <div class="catalogList-img_overlay">   </div>
             </div>
             <div class="catalogList-info"> 
-              <h2 class="main-title">Наименование типа</h2>
+              <h2 class="main-title">Наименование товара</h2>
               <p>Viverra nulla ut metus varius laoreet. Quisque <b>Aenean imperdiet.</b></p><a class="btn" href="#">Перейти в раздел  </a>
             </div>
           </div>
           <div class="catalogList-box">
-            <div class="catalogList-img"><img src="img/cat-prod.jpg">
+            <div class="catalogList-img"><img src="img/product-img.jpg">
               <div class="catalogList-img_overlay">   </div>
             </div>
             <div class="catalogList-info"> 
-              <h2 class="main-title">Наименование типа</h2>
+              <h2 class="main-title">Наименование товара</h2>
               <p>Viverra nulla ut metus varius laoreet. Quisque <b>Aenean imperdiet.</b></p><a class="btn" href="#">Перейти в раздел                       </a>
             </div>
           </div>

@@ -1,5 +1,21 @@
 $(document).ready(function() {
 
+    var repairSlider = $("#pageGallery");
+    repairSlider.owlCarousel({
+        loop: true,
+        nav: true,
+        autoplay: false,
+        smartSpeed: 1000,
+        margin: 0,
+        center: false, //если нужны обрезаные края
+        navText: ['<span class="nav-left"></span>', '<span class="nav-right"></span>'],
+        responsive: {
+            0: {
+                items: 1
+            }
+        }
+    });
+
     $('#select').hover(function() {
         $('.selectList-dropdown').stop().slideToggle();
         var link = $('.selectList-dropdown a');
@@ -12,7 +28,8 @@ $(document).ready(function() {
     });
 
     var menuSearch = $('.search-menu input');
-    var menuSearchHeader = $(".header-main_search__item input")
+    var menuSearchHeader = $(".header-main_search__item input");
+    var checkContactBox = $("div").is("#contactHeader");
     $('.search-menu').click(function() {
         $(menuSearch).focus();
     });
@@ -28,10 +45,24 @@ $(document).ready(function() {
     });
     $(menuSearchHeader).focus(function() {
         $(this).parent().addClass('active');
+        if (checkContactBox) {
+            $("#contactHeader").css('display', 'none');
+            $('.headerRight-box').css({
+                'width': '100%'
+            });
+        }
     });
     $(menuSearchHeader).blur(function() {
         $(this).parent().removeClass('active');
         $(this).val('');
+        if (checkContactBox) {
+            setTimeout(function() {
+                $("#contactHeader").fadeIn();
+            }, 800);
+            setTimeout(function() {
+                $('.headerRight-box').css('width', 'unset');
+            }, 850);
+        }
     });
 
     $('.main-logo').fadeIn();
