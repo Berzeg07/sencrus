@@ -8,7 +8,7 @@ $(document).ready(function() {
         smartSpeed: 1000,
         margin: 0,
         center: false, //если нужны обрезаные края
-        navText: ['<span class="nav-left"></span>', '<span class="nav-right"></span>'],
+        navText: ['<div class="arrow"></div>', '<div class="arrow"></div>'],
         responsive: {
             0: {
                 items: 1
