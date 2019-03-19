@@ -16,6 +16,54 @@ $(document).ready(function() {
         }
     });
 
+    var equipmentSlider = $(".equipment-slider");
+    equipmentSlider.owlCarousel({
+        loop: true,
+        nav: true,
+        autoplay: false,
+        smartSpeed: 1000,
+        margin: 12,
+        center: false, //если нужны обрезаные края
+        navText: ['<div class="left"></div>', '<div class="right"></div>'],
+        responsive: {
+            0: {
+                items: 1
+            },
+            768: {
+                items: 6
+            },
+            992: {
+                items: 7
+            }
+        }
+    });
+
+    $('.product-tabs_btn a').click(function(e) {
+        e.preventDefault();
+        $('a').removeClass('active');
+        $(this).addClass('active');
+        var tab = $(this).attr('href');
+        $('.product-tabs_item').not(tab).css({
+            'display': 'none'
+        });
+        $(tab).fadeIn(400);
+    });
+    $('.tab a:first').click();
+
+    // var ddd = Array.from($(".product-tabs_list li"));
+    // console.log(ddd);
+    // var arr = [];
+    // $('.product-tabs_list li').each(function() {
+    //     arr.push(this.innerHTML);
+    //     var arr2 = arr.slice(0,2);
+    //     // console.log(arr2);
+    //     // for(var i = 0; i < 2; i++){
+    //     //     // arr[i].addClass('visible');
+    //     //     console.log(arr[i]);
+    //     //
+    //     // }
+    // })
+
     $('#select').hover(function() {
         $('.selectList-dropdown').stop().slideToggle();
         var link = $('.selectList-dropdown a');
