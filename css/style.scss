@@ -340,6 +340,7 @@ video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
+
 article,
 aside,
 details,
@@ -2703,6 +2704,13 @@ nav {
 			display: flex;
 			flex-direction: column;
 			padding: 10px 15px;
+			display: none;
+
+			&:nth-child(-n+4) {
+				display: -webkit-flex;
+				display: -ms-flex;
+				display: flex;
+			}
 			@media(min-width: 992px) {
 				flex-direction: row;
 				justify-content: space-between;
@@ -2717,6 +2725,13 @@ nav {
 				font-family: "BebasNeueBold";
 				font-size: 18px;
 			}
+		}
+	}
+	&_list.active{
+		li{
+			display: -webkit-flex;
+			display: -ms-flex;
+			display: flex;
 		}
 	}
 
@@ -2735,6 +2750,7 @@ nav {
 
 	&_btnShow {
 		width: 100%;
+		display: none;
 	}
 
 	&_btn {
@@ -2973,29 +2989,34 @@ nav {
 }
 
 .equipment {
-	&-article{
+	&-article {
 		padding-bottom: 30px;
-		.main-title{
+
+		.main-title {
 			margin-bottom: 25px;
 			@media(min-width: 992px) {
 				margin-bottom: 40px;
 			}
 		}
 	}
-	&-link{
-		margin: 22px 0px;
+
+	&-link {
+		margin: 22px 0;
 		text-align: center;
 		position: relative;
-		&_btn{
+
+		&_btn {
 			display: inline-block;
-			.btn{
-				&:hover{
+
+			.btn {
+				&:hover {
 					background: white;
 				}
 			}
 			@media(min-width: 768px) {
 				position: relative;
-				&:after{
+
+				&:after {
 					content: "";
 					position: absolute;
 					left: -10px;
@@ -3006,7 +3027,8 @@ nav {
 				}
 			}
 		}
-		&:after{
+
+		&:after {
 			content: "";
 			position: absolute;
 			width: 100%;
@@ -3017,11 +3039,11 @@ nav {
 			transform: translateY(-50%);
 			z-index: -1;
 		}
-
 		@media(min-width: 768px) {
 			text-align: right;
 		}
 	}
+
 	&-slider {
 		position: relative;
 

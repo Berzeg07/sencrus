@@ -2640,6 +2640,13 @@ nav ul {
   display: flex;
   flex-direction: column;
   padding: 10px 15px;
+  display: none;
+}
+
+.product-tabs_list li:nth-child(-n+4) {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
 }
 
 @media (min-width: 992px) {
@@ -2657,6 +2664,12 @@ nav ul {
 .product-tabs_list li span {
   font-family: "BebasNeueBold";
   font-size: 18px;
+}
+
+.product-tabs_list.active li {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
 }
 
 .product-tabs .btn {
@@ -2677,6 +2690,7 @@ nav ul {
 
 .product-tabs_btnShow {
   width: 100%;
+  display: none;
 }
 
 .product-tabs_btn {
@@ -2929,7 +2943,7 @@ nav ul {
 }
 
 .equipment-link {
-  margin: 22px 0px;
+  margin: 22px 0;
   text-align: center;
   position: relative;
 }

@@ -50,19 +50,27 @@ $(document).ready(function() {
     });
     $('.tab a:first').click();
 
-    // var ddd = Array.from($(".product-tabs_list li"));
-    // console.log(ddd);
-    // var arr = [];
-    // $('.product-tabs_list li').each(function() {
-    //     arr.push(this.innerHTML);
-    //     var arr2 = arr.slice(0,2);
-    //     // console.log(arr2);
-    //     // for(var i = 0; i < 2; i++){
-    //     //     // arr[i].addClass('visible');
-    //     //     console.log(arr[i]);
-    //     //
-    //     // }
-    // })
+
+    var tabsEl = [];
+    $(".product-tabs_list li").each(function() {
+        tabsEl.push(this.innerHTML);
+    });
+    var num = 0;
+    for(var i = 0; i < tabsEl.length; i++){
+        num = i;
+    }
+    if(num > 3){
+        $('.product-tabs_btnShow').css('display','block');
+        $('.product-tabs_btnShow').click(function(){
+            $(this).parent().find('.product-tabs_list').toggleClass('active');
+            var checkClass = $('.product-tabs_list').hasClass('active');
+            if(checkClass){
+                $(this).html('скрыть');
+            }else{
+                $(this).html('показать все характеристики');
+            }
+        });
+    }
 
     $('#select').hover(function() {
         $('.selectList-dropdown').stop().slideToggle();
