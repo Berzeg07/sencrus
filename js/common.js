@@ -1,5 +1,189 @@
 $(document).ready(function() {
 
+    $('.contactGallery .item a').hover(function(e) {
+        e.preventDefault();
+        $('a').removeClass('active');
+        $('.contactGallery-box').removeClass('active');
+        $(this).addClass('active');
+        $(this).parents('.contactGallery-box').addClass('active');
+
+        var tab = $(this).attr('href');
+        $('.mapTabs-item').not(tab).css({
+            'display': 'none'
+        });
+        $(tab).fadeIn(400);
+    });
+    // $('.tab a:first').click();
+
+    ymaps.ready(init);
+    function init() {
+        // офис Екатеринбург ===================================================
+        var center = [56.817035, 60.631727];
+        var myMap = new ymaps.Map('office-ekaterinburg', {
+            center: center,
+            controls: [],
+            zoom: 16
+        }, {
+            searchControlProvider: 'yandex#search'
+
+        });
+
+        myMap.behaviors.disable('scrollZoom');
+
+        var myPlacemark = new ymaps.Placemark(center, {
+            // Свойства.
+            // Содержимое иконки, балуна и хинта.
+        	  balloonContent: 'улица Ивана Франко, 4к4',
+            hintContent: 'улица Ивана Франко, 4к4'
+        }, {
+            // Опции.
+            iconLayout: 'default#image',
+            iconImageHref: 'img/baloon.png',
+            iconImageSize: [133, 60]
+            // preset: 'twirl#violetIcon'
+        });
+
+        myMap.geoObjects.add(myPlacemark);
+
+        // Склад Екатеринбург ==================================================
+        var center2 = [56.817035, 60.631727];
+        var myMap2 = new ymaps.Map('sklad-ekaterinburg', {
+            center: center,
+            controls: [],
+            zoom: 16
+        }, {
+            searchControlProvider: 'yandex#search'
+
+        });
+
+        myMap2.behaviors.disable('scrollZoom');
+
+        var myPlacemark2 = new ymaps.Placemark(center, {
+            // Свойства.
+            // Содержимое иконки, балуна и хинта.
+        	  balloonContent: 'улица Ивана Франко, 4к4',
+            hintContent: 'улица Ивана Франко, 4к4'
+        }, {
+            // Опции.
+            iconLayout: 'default#image',
+            iconImageHref: 'img/baloon.png',
+            iconImageSize: [133, 60]
+            // preset: 'twirl#violetIcon'
+        });
+
+        myMap2.geoObjects.add(myPlacemark2);
+
+        // Офис Красноярск =====================================================
+        var center3 = [56.817035, 60.631727];
+        var myMap3 = new ymaps.Map('office-krasnoyarsk', {
+            center: center,
+            controls: [],
+            zoom: 16
+        }, {
+            searchControlProvider: 'yandex#search'
+
+        });
+
+        myMap3.behaviors.disable('scrollZoom');
+
+        var myPlacemark3 = new ymaps.Placemark(center, {
+            // Свойства.
+            // Содержимое иконки, балуна и хинта.
+        	  balloonContent: 'улица Ивана Франко, 4к4',
+            hintContent: 'улица Ивана Франко, 4к4'
+        }, {
+            // Опции.
+            iconLayout: 'default#image',
+            iconImageHref: 'img/baloon.png',
+            iconImageSize: [133, 60]
+            // preset: 'twirl#violetIcon'
+        });
+
+        myMap3.geoObjects.add(myPlacemark3);
+
+        // Склад Красноярск =====================================================
+        var center4 = [56.817035, 60.631727];
+        var myMap4 = new ymaps.Map('sklad-krasnoyarsk', {
+            center: center,
+            controls: [],
+            zoom: 16
+        }, {
+            searchControlProvider: 'yandex#search'
+
+        });
+
+        myMap4.behaviors.disable('scrollZoom');
+
+        var myPlacemark4 = new ymaps.Placemark(center, {
+            // Свойства.
+            // Содержимое иконки, балуна и хинта.
+        	  balloonContent: 'улица Ивана Франко, 4к4',
+            hintContent: 'улица Ивана Франко, 4к4'
+        }, {
+            // Опции.
+            iconLayout: 'default#image',
+            iconImageHref: 'img/baloon.png',
+            iconImageSize: [133, 60]
+            // preset: 'twirl#violetIcon'
+        });
+
+        myMap4.geoObjects.add(myPlacemark4);
+
+        // Офис Хабаровск =====================================================
+        var center5 = [56.817035, 60.631727];
+        var myMap5 = new ymaps.Map('office-habarovsk', {
+            center: center,
+            controls: [],
+            zoom: 16
+        }, {
+            searchControlProvider: 'yandex#search'
+
+        });
+
+        myMap5.behaviors.disable('scrollZoom');
+
+        var myPlacemark5 = new ymaps.Placemark(center, {
+            // Свойства.
+            // Содержимое иконки, балуна и хинта.
+        	  balloonContent: 'улица Ивана Франко, 4к4',
+            hintContent: 'улица Ивана Франко, 4к4'
+        }, {
+            // Опции.
+            iconLayout: 'default#image',
+            iconImageHref: 'img/baloon.png',
+            iconImageSize: [133, 60]
+            // preset: 'twirl#violetIcon'
+        });
+
+        myMap5.geoObjects.add(myPlacemark5);
+
+    }
+
+    var contactGallery = $(".contactGallery");
+    contactGallery.owlCarousel({
+        loop: true,
+        nav: true,
+        autoplay: false,
+        smartSpeed: 1000,
+        margin: -1,
+        center: false, //если нужны обрезаные края
+        navText: ['<div class="arrow"></div>', '<div class="arrow"></div>'],
+        responsive: {
+            0: {
+                items: 1
+            },
+            768: {
+                items: 3
+            },
+            992: {
+                items: 4
+            },
+            1270: {
+                items: 5
+            }
+        }
+    });
+
     var repairSlider = $("#pageGallery");
     repairSlider.owlCarousel({
         loop: true,
@@ -83,9 +267,19 @@ $(document).ready(function() {
         });
     });
 
+
+    var formInp = $('.contactRecall-inp input');
+    $(formInp).focus(function(){
+        $('.contactRecall-inp label').removeClass('active');
+        $(this).parent().addClass('active');
+    });
+    $(formInp).blur(function(){
+        $('.contactRecall-inp label').removeClass('active');
+    });
     var menuSearch = $('.search-menu input');
     var menuSearchHeader = $(".header-main_search__item input");
     var checkContactBox = $("div").is("#contactHeader");
+
     $('.search-menu').click(function() {
         $(menuSearch).focus();
     });
@@ -114,6 +308,7 @@ $(document).ready(function() {
         if (checkContactBox) {
             setTimeout(function() {
                 $("#contactHeader").fadeIn();
+                // $("#contactHeader").css('display','flex');
             }, 800);
             setTimeout(function() {
                 $('.headerRight-box').css('width', 'unset');
@@ -121,7 +316,7 @@ $(document).ready(function() {
         }
     });
 
-    $('.main-logo').fadeIn();
+    // $('.main-logo').fadeIn();
 
     // $(".hamburger").click(function() {
     //     $(this).toggleClass("is-active");

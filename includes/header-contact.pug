@@ -1,0 +1,19 @@
+.headerContact
+	include menu.pug
+	.headerContact-container
+		.headerContact-inner
+			.headerContact-inner_item
+				.header-logo
+					img(src="img/header-logo.png")
+				p.main-title Контакты
+			.headerContact-inner_item#contactHeader
+				p.headerContact-workT 
+					b мы работаем  
+					span с 9:00 - 23:00 <br> с пн-чт 
+				a(href="tel:3432870666").header-phone (343) 
+					span 2-870-666
+				a(href="mailto:senkrus@gmail.com").header-email e-mail: 
+					span senkrus@gmail.com
+			.headerContact-inner_item.headerRight-box.headerContact-search
+				include search.pug
+				
