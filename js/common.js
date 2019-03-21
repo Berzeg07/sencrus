@@ -1,19 +1,28 @@
 $(document).ready(function() {
 
+    $('.sortingBox-types_item').click(function(){
+        $('.sortingBox-types_item').removeClass('active');
+        $(this).addClass('active');
+        var check = $('.sortingBox-types_stroke').hasClass('active');
+        if(check){
+            $('.actionsList').addClass('active');
+        }else{
+            $('.actionsList').removeClass('active');
+        }
+    });
+
     $('.contactGallery .item a').hover(function(e) {
         e.preventDefault();
         $('a').removeClass('active');
         $('.contactGallery-box').removeClass('active');
         $(this).addClass('active');
         $(this).parents('.contactGallery-box').addClass('active');
-
         var tab = $(this).attr('href');
         $('.mapTabs-item').not(tab).css({
             'display': 'none'
         });
         $(tab).fadeIn(400);
     });
-    // $('.tab a:first').click();
 
     ymaps.ready(init);
     function init() {
@@ -25,7 +34,6 @@ $(document).ready(function() {
             zoom: 16
         }, {
             searchControlProvider: 'yandex#search'
-
         });
 
         myMap.behaviors.disable('scrollZoom');
@@ -53,7 +61,6 @@ $(document).ready(function() {
             zoom: 16
         }, {
             searchControlProvider: 'yandex#search'
-
         });
 
         myMap2.behaviors.disable('scrollZoom');
@@ -81,7 +88,6 @@ $(document).ready(function() {
             zoom: 16
         }, {
             searchControlProvider: 'yandex#search'
-
         });
 
         myMap3.behaviors.disable('scrollZoom');
@@ -109,7 +115,6 @@ $(document).ready(function() {
             zoom: 16
         }, {
             searchControlProvider: 'yandex#search'
-
         });
 
         myMap4.behaviors.disable('scrollZoom');
@@ -158,6 +163,28 @@ $(document).ready(function() {
         myMap5.geoObjects.add(myPlacemark5);
 
     }
+
+    var actionsSlide = $(".actionsSlide");
+    actionsSlide.owlCarousel({
+        loop: true,
+        nav: true,
+        autoplay: false,
+        smartSpeed: 1000,
+        margin: 0,
+        center: false, //если нужны обрезаные края
+        navText: ['<div class="left"></div>', '<div class="right"></div>'],
+        responsive: {
+            0: {
+                items: 1
+            },
+            768: {
+                items: 3
+            },
+            1600: {
+                items: 4
+            }
+        }
+    });
 
     var contactGallery = $(".contactGallery");
     contactGallery.owlCarousel({
