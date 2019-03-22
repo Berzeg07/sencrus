@@ -1,12 +1,12 @@
 $(document).ready(function() {
 
-    $('.sortingBox-types_item').click(function(){
+    $('.sortingBox-types_item').click(function() {
         $('.sortingBox-types_item').removeClass('active');
         $(this).addClass('active');
         var check = $('.sortingBox-types_stroke').hasClass('active');
-        if(check){
+        if (check) {
             $('.actionsList').addClass('active');
-        }else{
+        } else {
             $('.actionsList').removeClass('active');
         }
     });
@@ -24,144 +24,149 @@ $(document).ready(function() {
         $(tab).fadeIn(400);
     });
 
-    ymaps.ready(init);
-    function init() {
-        // офис Екатеринбург ===================================================
-        var center = [56.817035, 60.631727];
-        var myMap = new ymaps.Map('office-ekaterinburg', {
-            center: center,
-            controls: [],
-            zoom: 16
-        }, {
-            searchControlProvider: 'yandex#search'
-        });
+    var checkMapId = $('div').is('.mapTabs');
+    if (checkMapId) {
 
-        myMap.behaviors.disable('scrollZoom');
+        ymaps.ready(init);
 
-        var myPlacemark = new ymaps.Placemark(center, {
-            // Свойства.
-            // Содержимое иконки, балуна и хинта.
-        	  balloonContent: 'улица Ивана Франко, 4к4',
-            hintContent: 'улица Ивана Франко, 4к4'
-        }, {
-            // Опции.
-            iconLayout: 'default#image',
-            iconImageHref: 'img/baloon.png',
-            iconImageSize: [133, 60]
-            // preset: 'twirl#violetIcon'
-        });
+        function init() {
+            // офис Екатеринбург ===================================================
+            var center = [56.817035, 60.631727];
+            var myMap = new ymaps.Map('office-ekaterinburg', {
+                center: center,
+                controls: [],
+                zoom: 16
+            }, {
+                searchControlProvider: 'yandex#search'
+            });
 
-        myMap.geoObjects.add(myPlacemark);
+            myMap.behaviors.disable('scrollZoom');
 
-        // Склад Екатеринбург ==================================================
-        var center2 = [56.817035, 60.631727];
-        var myMap2 = new ymaps.Map('sklad-ekaterinburg', {
-            center: center,
-            controls: [],
-            zoom: 16
-        }, {
-            searchControlProvider: 'yandex#search'
-        });
+            var myPlacemark = new ymaps.Placemark(center, {
+                // Свойства.
+                // Содержимое иконки, балуна и хинта.
+                balloonContent: 'улица Ивана Франко, 4к4',
+                hintContent: 'улица Ивана Франко, 4к4'
+            }, {
+                // Опции.
+                iconLayout: 'default#image',
+                iconImageHref: 'img/baloon.png',
+                iconImageSize: [133, 60]
+                // preset: 'twirl#violetIcon'
+            });
 
-        myMap2.behaviors.disable('scrollZoom');
+            myMap.geoObjects.add(myPlacemark);
 
-        var myPlacemark2 = new ymaps.Placemark(center, {
-            // Свойства.
-            // Содержимое иконки, балуна и хинта.
-        	  balloonContent: 'улица Ивана Франко, 4к4',
-            hintContent: 'улица Ивана Франко, 4к4'
-        }, {
-            // Опции.
-            iconLayout: 'default#image',
-            iconImageHref: 'img/baloon.png',
-            iconImageSize: [133, 60]
-            // preset: 'twirl#violetIcon'
-        });
+            // Склад Екатеринбург ==================================================
+            var center2 = [56.817035, 60.631727];
+            var myMap2 = new ymaps.Map('sklad-ekaterinburg', {
+                center: center,
+                controls: [],
+                zoom: 16
+            }, {
+                searchControlProvider: 'yandex#search'
+            });
 
-        myMap2.geoObjects.add(myPlacemark2);
+            myMap2.behaviors.disable('scrollZoom');
 
-        // Офис Красноярск =====================================================
-        var center3 = [56.817035, 60.631727];
-        var myMap3 = new ymaps.Map('office-krasnoyarsk', {
-            center: center,
-            controls: [],
-            zoom: 16
-        }, {
-            searchControlProvider: 'yandex#search'
-        });
+            var myPlacemark2 = new ymaps.Placemark(center, {
+                // Свойства.
+                // Содержимое иконки, балуна и хинта.
+                balloonContent: 'улица Ивана Франко, 4к4',
+                hintContent: 'улица Ивана Франко, 4к4'
+            }, {
+                // Опции.
+                iconLayout: 'default#image',
+                iconImageHref: 'img/baloon.png',
+                iconImageSize: [133, 60]
+                // preset: 'twirl#violetIcon'
+            });
 
-        myMap3.behaviors.disable('scrollZoom');
+            myMap2.geoObjects.add(myPlacemark2);
 
-        var myPlacemark3 = new ymaps.Placemark(center, {
-            // Свойства.
-            // Содержимое иконки, балуна и хинта.
-        	  balloonContent: 'улица Ивана Франко, 4к4',
-            hintContent: 'улица Ивана Франко, 4к4'
-        }, {
-            // Опции.
-            iconLayout: 'default#image',
-            iconImageHref: 'img/baloon.png',
-            iconImageSize: [133, 60]
-            // preset: 'twirl#violetIcon'
-        });
+            // Офис Красноярск =====================================================
+            var center3 = [56.817035, 60.631727];
+            var myMap3 = new ymaps.Map('office-krasnoyarsk', {
+                center: center,
+                controls: [],
+                zoom: 16
+            }, {
+                searchControlProvider: 'yandex#search'
+            });
 
-        myMap3.geoObjects.add(myPlacemark3);
+            myMap3.behaviors.disable('scrollZoom');
 
-        // Склад Красноярск =====================================================
-        var center4 = [56.817035, 60.631727];
-        var myMap4 = new ymaps.Map('sklad-krasnoyarsk', {
-            center: center,
-            controls: [],
-            zoom: 16
-        }, {
-            searchControlProvider: 'yandex#search'
-        });
+            var myPlacemark3 = new ymaps.Placemark(center, {
+                // Свойства.
+                // Содержимое иконки, балуна и хинта.
+                balloonContent: 'улица Ивана Франко, 4к4',
+                hintContent: 'улица Ивана Франко, 4к4'
+            }, {
+                // Опции.
+                iconLayout: 'default#image',
+                iconImageHref: 'img/baloon.png',
+                iconImageSize: [133, 60]
+                // preset: 'twirl#violetIcon'
+            });
 
-        myMap4.behaviors.disable('scrollZoom');
+            myMap3.geoObjects.add(myPlacemark3);
 
-        var myPlacemark4 = new ymaps.Placemark(center, {
-            // Свойства.
-            // Содержимое иконки, балуна и хинта.
-        	  balloonContent: 'улица Ивана Франко, 4к4',
-            hintContent: 'улица Ивана Франко, 4к4'
-        }, {
-            // Опции.
-            iconLayout: 'default#image',
-            iconImageHref: 'img/baloon.png',
-            iconImageSize: [133, 60]
-            // preset: 'twirl#violetIcon'
-        });
+            // Склад Красноярск =====================================================
+            var center4 = [56.817035, 60.631727];
+            var myMap4 = new ymaps.Map('sklad-krasnoyarsk', {
+                center: center,
+                controls: [],
+                zoom: 16
+            }, {
+                searchControlProvider: 'yandex#search'
+            });
 
-        myMap4.geoObjects.add(myPlacemark4);
+            myMap4.behaviors.disable('scrollZoom');
 
-        // Офис Хабаровск =====================================================
-        var center5 = [56.817035, 60.631727];
-        var myMap5 = new ymaps.Map('office-habarovsk', {
-            center: center,
-            controls: [],
-            zoom: 16
-        }, {
-            searchControlProvider: 'yandex#search'
+            var myPlacemark4 = new ymaps.Placemark(center, {
+                // Свойства.
+                // Содержимое иконки, балуна и хинта.
+                balloonContent: 'улица Ивана Франко, 4к4',
+                hintContent: 'улица Ивана Франко, 4к4'
+            }, {
+                // Опции.
+                iconLayout: 'default#image',
+                iconImageHref: 'img/baloon.png',
+                iconImageSize: [133, 60]
+                // preset: 'twirl#violetIcon'
+            });
 
-        });
+            myMap4.geoObjects.add(myPlacemark4);
 
-        myMap5.behaviors.disable('scrollZoom');
+            // Офис Хабаровск =====================================================
+            var center5 = [56.817035, 60.631727];
+            var myMap5 = new ymaps.Map('office-habarovsk', {
+                center: center,
+                controls: [],
+                zoom: 16
+            }, {
+                searchControlProvider: 'yandex#search'
 
-        var myPlacemark5 = new ymaps.Placemark(center, {
-            // Свойства.
-            // Содержимое иконки, балуна и хинта.
-        	  balloonContent: 'улица Ивана Франко, 4к4',
-            hintContent: 'улица Ивана Франко, 4к4'
-        }, {
-            // Опции.
-            iconLayout: 'default#image',
-            iconImageHref: 'img/baloon.png',
-            iconImageSize: [133, 60]
-            // preset: 'twirl#violetIcon'
-        });
+            });
 
-        myMap5.geoObjects.add(myPlacemark5);
+            myMap5.behaviors.disable('scrollZoom');
 
+            var myPlacemark5 = new ymaps.Placemark(center, {
+                // Свойства.
+                // Содержимое иконки, балуна и хинта.
+                balloonContent: 'улица Ивана Франко, 4к4',
+                hintContent: 'улица Ивана Франко, 4к4'
+            }, {
+                // Опции.
+                iconLayout: 'default#image',
+                iconImageHref: 'img/baloon.png',
+                iconImageSize: [133, 60]
+                // preset: 'twirl#violetIcon'
+            });
+
+            myMap5.geoObjects.add(myPlacemark5);
+
+        }
     }
 
     var actionsSlide = $(".actionsSlide");
@@ -267,17 +272,17 @@ $(document).ready(function() {
         tabsEl.push(this.innerHTML);
     });
     var num = 0;
-    for(var i = 0; i < tabsEl.length; i++){
+    for (var i = 0; i < tabsEl.length; i++) {
         num = i;
     }
-    if(num > 3){
-        $('.product-tabs_btnShow').css('display','block');
-        $('.product-tabs_btnShow').click(function(){
+    if (num > 3) {
+        $('.product-tabs_btnShow').css('display', 'block');
+        $('.product-tabs_btnShow').click(function() {
             $(this).parent().find('.product-tabs_list').toggleClass('active');
             var checkClass = $('.product-tabs_list').hasClass('active');
-            if(checkClass){
+            if (checkClass) {
                 $(this).html('скрыть');
-            }else{
+            } else {
                 $(this).html('показать все характеристики');
             }
         });
@@ -296,11 +301,11 @@ $(document).ready(function() {
 
 
     var formInp = $('.contactRecall-inp input');
-    $(formInp).focus(function(){
+    $(formInp).focus(function() {
         $('.contactRecall-inp label').removeClass('active');
         $(this).parent().addClass('active');
     });
-    $(formInp).blur(function(){
+    $(formInp).blur(function() {
         $('.contactRecall-inp label').removeClass('active');
     });
     var menuSearch = $('.search-menu input');
