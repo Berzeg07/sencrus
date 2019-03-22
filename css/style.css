@@ -3811,6 +3811,7 @@ nav ul {
 .actionsList-item_img {
   max-width: 493px;
   width: 100%;
+  cursor: pointer;
 }
 
 .actionsList-item_img img {
@@ -4063,7 +4064,7 @@ nav ul {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: url(../img/partners-bg.png) no-repeat center;
+  background: url("../img/partners-bg.png") no-repeat center;
 }
 
 @media (min-width: 1200px) {
@@ -4104,7 +4105,7 @@ nav ul {
 }
 
 .partners .boxes:hover .overlay-p {
-  left: 0%;
+  left: 0;
 }
 
 .partners .overlay-p {
@@ -4117,4 +4118,52 @@ nav ul {
   transition: 0.5s;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 10;
+}
+
+.actionsModal {
+  position: fixed;
+  max-width: 1000px;
+  top: -100%;
+  left: 50%;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+  background: white;
+  transition: all 600ms cubic-bezier(0.86, 0, 0.07, 1);
+  z-index: 60;
+}
+
+.actionsModal-title {
+  font-family: "BebasNeueBold";
+  padding: 15px;
+  font-size: 25px;
+  border-bottom: 1px solid #BCBCBC;
+}
+
+.actionsModal-article {
+  padding: 15px;
+}
+
+.actionsModal-article p {
+  margin-bottom: 15px;
+}
+
+.actionsModal-close {
+  margin-top: 15px;
+  width: 100px;
+  height: 35px;
+  color: white;
+  background: #29A9E3;
+  border-radius: 10em;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.actionsModal-close:hover {
+  background: #45C3FC;
+}
+
+.actionsModal.active {
+  top: 50%;
 }

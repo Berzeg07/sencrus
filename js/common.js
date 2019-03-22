@@ -1,5 +1,18 @@
 $(document).ready(function() {
 
+    $('.actionsList-item_img').click(function() {
+        $(this).parents('.actionsList-item').find('.actionsModal').addClass('active');
+        $('.footer .overlay').fadeIn();
+    });
+    $('.actionsModal-close').click(function() {
+        $('.actionsModal').removeClass('active');
+        $('.footer .overlay').fadeOut();
+    });
+    $('.footer .overlay').click(function() {
+        $(this).fadeOut();
+        $('.actionsModal').removeClass('active');
+    });
+
     $('.sortingBox-types_item').click(function() {
         $('.sortingBox-types_item').removeClass('active');
         $(this).addClass('active');

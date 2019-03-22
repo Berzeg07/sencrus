@@ -340,6 +340,7 @@ video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
+
 article,
 aside,
 details,
@@ -3833,6 +3834,7 @@ nav {
 		&_img {
 			max-width: 493px;
 			width: 100%;
+			cursor: pointer;
 
 			img {
 				display: block;
@@ -4035,8 +4037,8 @@ nav {
 	}
 }
 
-.headerPartners{
-	.main-title{
+.headerPartners {
+	.main-title {
 		@media(min-width: 1200px) {
 			font-size: 70px;
 		}
@@ -4056,7 +4058,7 @@ nav {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background: url(../img/partners-bg.png) no-repeat center;
+	background: url("../img/partners-bg.png") no-repeat center;
 	@media(min-width: 1200px) {
 		flex-direction: row;
 		align-items: flex-start;
@@ -4071,6 +4073,7 @@ nav {
 		@media(min-width: 1200px) {
 			margin-right: 13px;
 			padding: 0;
+
 			&:nth-child(2n) {
 				padding-top: 130px;
 			}
@@ -4087,12 +4090,14 @@ nav {
 		position: relative;
 		overflow: hidden;
 		margin-bottom: 13px;
-		&:hover{
-			.overlay-p{
-				left: 0%;
+
+		&:hover {
+			.overlay-p {
+				left: 0;
 			}
 		}
 	}
+
 	.overlay-p {
 		position: absolute;
 		width: 100%;
@@ -4104,4 +4109,47 @@ nav {
 		background-color: rgba(0, 0, 0, 0.8);
 		z-index: 10;
 	}
+}
+
+.actionsModal {
+	position: fixed;
+	max-width: 1000px;
+	top: -100%;
+	left: 50%;
+	border-radius: 10px;
+	transform: translate(-50%,-50%);
+	background: white;
+	transition: all 600ms cubic-bezier(0.86, 0, 0.07, 1);
+	z-index: 60;
+	&-title{
+		font-family: "BebasNeueBold";
+		padding: 15px;
+		font-size: 25px;
+		border-bottom: 1px solid #BCBCBC;
+	}
+	&-article{
+		padding: 15px;
+		p{
+			margin-bottom: 15px;
+		}
+	}
+	&-close{
+		margin-top: 15px;
+		width: 100px;
+		height: 35px;
+		color: white;
+		background: #29A9E3;
+		border-radius: 10em;
+		border:none;
+		outline: none;
+		cursor: pointer;
+		transition: 0.5s;
+		&:hover{
+			background: #45C3FC;
+		}
+	}
+}
+
+.actionsModal.active {
+	top: 50%;
 }
