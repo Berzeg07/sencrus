@@ -270,6 +270,9 @@ textarea {
   max-width: 520px;
   margin-top: 15px;
   width: 100%;
+}
+
+.header-main_logo p {
   font-family: "AgencyFB-Bold";
   font-size: 86px;
   text-transform: uppercase;
@@ -288,7 +291,6 @@ textarea {
 .header-main_logo .main-logo {
   position: relative;
   top: 15px;
-  display: none;
 }
 
 .header-main_actions {
@@ -590,6 +592,10 @@ nav ul {
   font-size: 20px;
   text-transform: uppercase;
   color: #3f3d3e;
+}
+
+.hidden-menu_links a:hover {
+  color: white;
 }
 
 .hidden-menu.nav-show {
@@ -4166,4 +4172,59 @@ nav ul {
 
 .actionsModal.active {
   top: 50%;
+}
+
+.hidden-menu_form {
+  max-width: 260px;
+  width: 100%;
+  padding-left: 20px;
+  display: none;
+}
+
+.hidden-menu_form .btn {
+  border: none;
+}
+
+.hidden-menu_form .contactRecall-inp,
+.hidden-menu_form .contactRecall-text {
+  width: 100%;
+}
+
+.hidden-menu_form .contactRecall-inp {
+  margin-bottom: 15px;
+}
+
+.hidden-menu_form .contactRecall-inp input {
+  font-size: 18px;
+}
+
+.hidden-menu_form .contactRecall-inp label:first-child {
+  margin-bottom: 18px;
+}
+
+.hidden-menu_form .capcha,
+.hidden-menu_form .contactRecall-text,
+.hidden-menu_form .privacy {
+  margin-bottom: 15px;
+}
+
+.hidden-menu_form .main-title {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 31px;
+}
+
+.hidden-menu_form .main-title span {
+  color: #17BEF4;
+}
+
+.hidden-menu_form .privacy {
+  font-family: "MicrosoftSansSerif";
+  color: #666d7b;
+  font-size: 10px;
+}
+
+.hidden-menu_form .privacy a {
+  text-decoration: underline;
+  color: #666d7b;
 }

@@ -1,51 +1,73 @@
 .hidden-menu
-    .hidden-menu_item
-        .hamburger.hidden-menu_close.is-active#hamburger
-            span.line
-            span.line
-            span.line
-        .hidden-menu_phone
-            a(href="tel:+3432870666")
-                span (343) 
-                | 2-870-666
-        .hidden-menu_search
-            .search-menu
-                input(type="text")
-        ul.hidden-menu_links
-            li
-                a(href="#") Заказать звонок
-            li    
-                a(href="#") Наши партнеры
+	.hidden-menu_item
+		.hamburger.hidden-menu_close.is-active#hamburger
+			span.line
+			span.line
+			span.line
+		.hidden-menu_phone
+			a(href="tel:+3432870666")
+				span (343) 
+				| 2-870-666
+		.hidden-menu_search
+			.search-menu
+				input(type="text")
+		ul.hidden-menu_links
+			li
+				a(href="#").hidden-menu_recallBtn Заказать звонок
+			li    
+				a(href="#") Наши партнеры
 
-    .hidden-menu_item
-        ul.hidden-menu_nav
-            li 
-                a(href="#") О компании
-            li
-                a(href="#") Продукция
-            li
-                a(href="#") Новости
-            li 
-                a(href="#") Акции и скидки
-        ul.hidden-menu_nav
-            li 
-                a(href="#") геологоразведочный <br>инструмент и оборудование
-            li
-                a(href="#") химические реагенты <br>для бурения
-            li
-                a(href="#") Сервис
-            li 
-                a(href="#") оборудование для <br>нефтедобывающей отрасли
-            li 
-                a(href="#") раздел находится<br> в разработке
+	.hidden-menu_item
+		.hidden-menu_form
+			form
+				p.main-title Заполните поля,<br> Наши менеджеры 
+					span бесплатно 
+					|проконсультируют вас
+				.contactRecall-inp
+					label
+						input(type="text" placeholder="Имя*")
+					label        
+						input(type="text" placeholder="Телефон*")
+				.contactRecall-text
+					textarea(placeholder="Добавить комментарий")            
+				.capcha
+					img(src="img/capcha.png")
+				.privacy
+					|Нажав на кнопку “заказать обратный звонок” Вы
+					|соглашаетесь с условиями 
+					a(href="#") публичной оферты 
+					|и с условиями 
+					a(href="#") Политики обработки персональных данных
+				button(type="submit").btn Заказать обратный звонок                
+		.hidden-menu_tabNav      
+			ul.hidden-menu_nav
+				li 
+					a(href="#") О компании
+				li
+					a(href="#") Продукция
+				li
+					a(href="#") Новости
+				li 
+					a(href="#") Акции и скидки
+			ul.hidden-menu_nav
+				li 
+					a(href="#") геологоразведочный <br>инструмент и оборудование
+				li
+					a(href="#") химические реагенты <br>для бурения
+				li
+					a(href="#") Сервис
+				li 
+					a(href="#") оборудование для <br>нефтедобывающей отрасли
+				li 
+					a(href="#") раздел находится<br> в разработке
 
-    .hidden-menu_item
-        .hidden-menu_social
-            a(href="#")
-                img(src="img/fb-icon.png")
-            a(href="#")
-                img(src="img/twitt-icon.png")
-            a(href="#")
-                img(src="img/inst-icon.png")
-            a(href="#")
-                img(src="img/g-icon.png")
+	.hidden-menu_item
+		.hidden-menu_social
+			a(href="#")
+				img(src="img/fb-icon.png")
+			a(href="#")
+				img(src="img/twitt-icon.png")
+			a(href="#")
+				img(src="img/inst-icon.png")
+			a(href="#")
+				img(src="img/g-icon.png")

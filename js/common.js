@@ -1,5 +1,19 @@
 $(document).ready(function() {
 
+    $('.hidden-menu_recallBtn').click(function(){
+        $(this).toggleClass('active');
+        var check = $(this).hasClass('active');
+        if(check){
+            $(this).html('Назад к меню');
+            $('.hidden-menu_tabNav').css('display','none');
+            $('.hidden-menu_form').fadeIn();
+        }else{
+            $('.hidden-menu_form').css('display','none');
+            $('.hidden-menu_tabNav').fadeIn();
+            $(this).html('Заказать звонок');
+        }
+    });
+
     $('.actionsList-item_img').click(function() {
         $(this).parents('.actionsList-item').find('.actionsModal').addClass('active');
         $('.footer .overlay').fadeIn();
