@@ -1,4 +1,5 @@
 .header-main
+	.header-main_bg
 	.header-main_df
 		include menu.pug
 		.header-main_inner.container.animated.bounceInDown
@@ -21,13 +22,13 @@
 							a(href='#').btn-link
 								| Контакты
 			.header-main_item
-				a(href='#').header-main_actions
-					span.line-l
-					span.line-r
-					|  Акция
+				#hidden
+					a(href='#').header-main_actions
+						span.line-l
+						span.line-r
+						|  Акция
 				.header-main_search
-					.header-main_search__item
-						input(type="text")
+					input(type="text")
 				.header-main_phone
 					a(href="tel:+3432870666")
 						span (343) 

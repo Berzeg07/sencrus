@@ -349,6 +349,7 @@ $(document).ready(function() {
         $(this).parent().removeClass('active');
         $(this).val('');
     });
+
     $('.header-main_search__item').click(function() {
         $(menuSearchHeader).focus();
     });
@@ -372,6 +373,27 @@ $(document).ready(function() {
             setTimeout(function() {
                 $('.headerRight-box').css('width', 'unset');
             }, 850);
+        }
+    });
+
+    var mainSearch = $('.header-main_search input');
+    var checkMobBlock = $("div").is("#hidden");
+    $('.header-main_search').click(function(){
+        $(mainSearch).focus();
+    });
+    $( mainSearch).focus(function() {
+        $(this).parent().addClass('active');
+        if (checkMobBlock) {
+            $("#hidden").css('display', 'none');
+        }
+    });
+    $(mainSearch).blur(function() {
+        $(this).parent().removeClass('active');
+        $(this).val('');
+        if (checkMobBlock) {
+            setTimeout(function() {
+                $("#hidden").fadeIn();
+            }, 800);
         }
     });
 
