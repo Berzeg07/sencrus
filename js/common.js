@@ -1,14 +1,14 @@
 $(document).ready(function() {
 
-    $('.hidden-menu_recallBtn').click(function(){
+    $('.hidden-menu_recallBtn').click(function() {
         $(this).toggleClass('active');
         var check = $(this).hasClass('active');
-        if(check){
+        if (check) {
             $(this).html('Назад к меню');
-            $('.hidden-menu_tabNav').css('display','none');
+            $('.hidden-menu_tabNav').css('display', 'none');
             $('.hidden-menu_form').fadeIn();
-        }else{
-            $('.hidden-menu_form').css('display','none');
+        } else {
+            $('.hidden-menu_form').css('display', 'none');
             $('.hidden-menu_tabNav').fadeIn();
             $(this).html('Заказать звонок');
         }
@@ -57,7 +57,7 @@ $(document).ready(function() {
         ymaps.ready(init);
 
         function init() {
-            // офис Екатеринбург ===================================================
+         // офис Екатеринбург ===================================================
             var center = [56.817035, 60.631727];
             var myMap = new ymaps.Map('office-ekaterinburg', {
                 center: center,
@@ -85,9 +85,9 @@ $(document).ready(function() {
             myMap.geoObjects.add(myPlacemark);
 
             // Склад Екатеринбург ==================================================
-            var center2 = [56.817035, 60.631727];
+            var center2 = [56.866165, 60.621289];
             var myMap2 = new ymaps.Map('sklad-ekaterinburg', {
-                center: center,
+                center: center2,
                 controls: [],
                 zoom: 16
             }, {
@@ -96,7 +96,7 @@ $(document).ready(function() {
 
             myMap2.behaviors.disable('scrollZoom');
 
-            var myPlacemark2 = new ymaps.Placemark(center, {
+            var myPlacemark2 = new ymaps.Placemark(center2, {
                 // Свойства.
                 // Содержимое иконки, балуна и хинта.
                 balloonContent: 'улица Ивана Франко, 4к4',
@@ -112,9 +112,9 @@ $(document).ready(function() {
             myMap2.geoObjects.add(myPlacemark2);
 
             // Офис Красноярск =====================================================
-            var center3 = [56.817035, 60.631727];
+            var center3 = [56.047902, 92.857054];
             var myMap3 = new ymaps.Map('office-krasnoyarsk', {
-                center: center,
+                center: center3,
                 controls: [],
                 zoom: 16
             }, {
@@ -123,7 +123,7 @@ $(document).ready(function() {
 
             myMap3.behaviors.disable('scrollZoom');
 
-            var myPlacemark3 = new ymaps.Placemark(center, {
+            var myPlacemark3 = new ymaps.Placemark(center3, {
                 // Свойства.
                 // Содержимое иконки, балуна и хинта.
                 balloonContent: 'улица Ивана Франко, 4к4',
@@ -139,9 +139,9 @@ $(document).ready(function() {
             myMap3.geoObjects.add(myPlacemark3);
 
             // Склад Красноярск =====================================================
-            var center4 = [56.817035, 60.631727];
+            var center4 = [56.047902, 92.857054];
             var myMap4 = new ymaps.Map('sklad-krasnoyarsk', {
-                center: center,
+                center: center4,
                 controls: [],
                 zoom: 16
             }, {
@@ -150,7 +150,7 @@ $(document).ready(function() {
 
             myMap4.behaviors.disable('scrollZoom');
 
-            var myPlacemark4 = new ymaps.Placemark(center, {
+            var myPlacemark4 = new ymaps.Placemark(center4, {
                 // Свойства.
                 // Содержимое иконки, балуна и хинта.
                 balloonContent: 'улица Ивана Франко, 4к4',
@@ -378,10 +378,10 @@ $(document).ready(function() {
 
     var mainSearch = $('.header-main_search input');
     var checkMobBlock = $("div").is("#hidden");
-    $('.header-main_search').click(function(){
+    $('.header-main_search').click(function() {
         $(mainSearch).focus();
     });
-    $( mainSearch).focus(function() {
+    $(mainSearch).focus(function() {
         $(this).parent().addClass('active');
         if (checkMobBlock) {
             $("#hidden").css('display', 'none');
