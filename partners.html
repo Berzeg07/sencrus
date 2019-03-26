@@ -11,7 +11,16 @@
     <link href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
   </head>
-  <body>
+  <body><div id="cube-loader">
+<div class="caption">
+<div class="cube-loader">
+<div class="cube loader-1"></div>
+<div class="cube loader-2"></div>
+<div class="cube loader-4"></div>
+<div class="cube loader-3"></div>
+</div>
+</div>
+</div>
     <div class="header headerActions headerPartners">
       <div class="hidden-menu">
         <div class="hidden-menu_item">
@@ -33,10 +42,10 @@
               <p class="main-title">Заполните поля,<br> Наши менеджеры <span>бесплатно </span>проконсультируют вас</p>
               <div class="contactRecall-inp">
                 <label>
-                  <input type="text" placeholder="Имя*">
+                  <input type="text" placeholder="Имя*" required>
                 </label>
                 <label>       
-                  <input type="text" placeholder="Телефон*">
+                  <input type="text" placeholder="Телефон*" required>
                 </label>
               </div>
               <div class="contactRecall-text">
@@ -67,7 +76,7 @@
           </div>
         </div>
         <div class="hidden-menu_item">
-          <div class="hidden-menu_social"><a href="#"><img src="img/fb-icon.png"></a><a href="#"><img src="img/twitt-icon.png"></a><a href="#"><img src="img/inst-icon.png"></a><a href="#"><img src="img/g-icon.png"></a></div>
+          <div class="hidden-menu_social"><a class="fb-link" href="#"><img class="fb-g" src="img/fb-icon-g.png"><img class="fb-b" src="img/fb-icon.png"></a><a class="twitt-link" href="#"><img class="twitt-g" src="img/twitt-icon.png"><img class="twitt-b" src="img/twitt-icon-b.png"></a><a class="inst-link" href="#"><img class="inst-g" src="img/inst-icon.png"><img class="inst-b" src="img/inst-icon-b.png"></a><a class="google-link" href="#"><img class="google-g" src="img/g-icon.png"><img class="google-b" src="img/g-icon-b.png"></a></div>
         </div>
       </div>
       <div class="header-item header-item_left">
@@ -172,12 +181,12 @@
     <div class="footer">
       <div class="footer-item_left">
         <div class="footer-nav_block">
-          <ul class="footer-nav">
-            <li><a href="#">Геологоразведочный<br> инструмент и оборудование</a></li>
-            <li><a href="#">Сервис</a></li>
-            <li><a href="#">оборудование <br>для нефтедобывающей<br> отрасли</a></li>
+          <ul class="footer-nav footer-tab_link">
+            <li class="footer-tab_link_li"><a href="#footer-links_geo">Геологоразведочный<br> инструмент и оборудование</a></li>
+            <li><a href="#footer-links_service">Сервис</a></li>
+            <li><a href="#footer-links_equip">оборудование <br>для нефтедобывающей<br> отрасли</a></li>
           </ul>
-          <ul class="footer-links">
+          <ul class="footer-links footer-tab" id="footer-links_geo">
             <li><a href="#">Алмазный инструмент</a></li>
             <li><a href="#">Бурильные, обсадные, <br>колонковые штанги	</a></li>
             <li><a href="#">Аварийный инструмент</a></li>
@@ -190,6 +199,34 @@
             <li><a href="#">Сальник		</a></li>
             <li><a href="#">Пробка-Вертлюг</a></li>
             <li><a href="#">Долото</a></li>
+          </ul>
+          <ul class="footer-links footer-tab" id="footer-links_service">
+            <li><a href="#">Тест 1</a></li>
+            <li><a href="#">Бурильные, обсадные, <br>колонковые штанги	</a></li>
+            <li><a href="#">Аварийный инструмент</a></li>
+            <li><a href="#">Овершот	</a></li>
+            <li><a href="#">Переходы</a></li>
+            <li><a href="#">Ключи</a></li>
+            <li><a href="#">Вспомогательный инструмент</a></li>
+            <li><a href="#">Адвансер		</a></li>
+            <li><a href="#">Труборезка		</a></li>
+            <li><a href="#">Сальник		</a></li>
+            <li><a href="#">Пробка-Вертлюг</a></li>
+            <li><a href="#">Долото</a></li>
+          </ul>
+          <ul class="footer-links footer-tab" id="footer-links_equip">
+            <li><a href="#">Тест 2</a></li>
+            <li><a href="#">Бурильные, обсадные, <br>колонковые штанги	</a></li>
+            <li><a href="#">Аварийный инструмент</a></li>
+            <li><a href="#">Овершот	</a></li>
+            <li><a href="#">Переходы</a></li>
+            <li><a href="#">Ключи</a></li>
+            <li><a href="#">Вспомогательный инструмент</a></li>
+            <li><a href="#">Адвансер		</a></li>
+            <li><a href="#">Труборезка		</a></li>
+            <li><a href="#">Сальник		</a></li>
+            <li><a href="#">Пробка-Вертлюг</a></li>
+            <li><a href="#">Долото		</a></li>
           </ul>
         </div>
         <div class="footer-nav_block">
@@ -220,11 +257,11 @@
             <p>Тел./Факс:</p><span>+7(343)2-870-666</span>
             <p>Email</p><span>senkrus@gmail.com</span>
           </div>
-          <div class="footer-social"><a href="#"><img src="img/fb-icon.png"></a><a href="#"><img src="img/twitt.png"></a><a href="#"><img src="img/inst.png"></a><a href="#"><img src="img/g.png"></a></div>
+          <div class="footer-social"><a href="#"><img src="img/fb-icon.png"></a><a href="#"><img src="img/twitt.png"></a><a href="#"><img src="img/inst.png"></a><a href="#"><img src="img/g-icon-b.png"></a></div>
           <div class="footer-copyright">
             <p>© 2012 ООО «Сенкрус»</p>
             <p>Копирование информации с сайта разрешено <br>только с письменного согласия администрации</p>
-            <p> <a class="ipos-link" href="#"><span> <img src="img/ipos.png"></span><span>Разработка и продвижение сайта</span></a></p>
+            <p> <a class="ipos-link" href="#"><span> <img class="ipos-g" src="img/ipos.png"><img class="ipos-b" src="img/ipos-b.png"></span><span>Разработка и продвижение сайта</span></a></p>
           </div>
         </div>
       </div>

@@ -1,16 +1,27 @@
 $(document).ready(function() {
 
+    $(window).on('load', function() {
+        $preloader = $('#cube-loader'),
+            $loader = $preloader.find('.caption');
+        $loader.fadeOut();
+        $preloader.delay(350).fadeOut('slow');
+    });
+
     $('.hidden-menu_recallBtn').click(function() {
         $(this).toggleClass('active');
         var check = $(this).hasClass('active');
         if (check) {
             $(this).html('Назад к меню');
+            $(this).css('color', '#04c5fd');
+
             $('.hidden-menu_tabNav').css('display', 'none');
             $('.hidden-menu_form').fadeIn();
         } else {
             $('.hidden-menu_form').css('display', 'none');
             $('.hidden-menu_tabNav').fadeIn();
             $(this).html('Заказать звонок');
+            $(this).css('color', '#3f3d3e');
+
         }
     });
 
@@ -57,7 +68,7 @@ $(document).ready(function() {
         ymaps.ready(init);
 
         function init() {
-         // офис Екатеринбург ===================================================
+            // офис Екатеринбург ===================================================
             var center = [56.817035, 60.631727];
             var myMap = new ymaps.Map('office-ekaterinburg', {
                 center: center,
@@ -293,6 +304,23 @@ $(document).ready(function() {
     });
     $('.tab a:first').click();
 
+    $('.footer-tab_link a').click(function(e) {
+        e.preventDefault();
+        $('a').removeClass('active');
+        $(this).addClass('active');
+        var tab = $(this).attr('href');
+        $('.footer-tab').not(tab).css({
+            'display': 'none'
+        });
+        $(tab).fadeIn(400);
+    });
+
+    if (window.matchMedia('(min-width: 992px)').matches) {
+        $('.footer-tab_link_li a').addClass('active');
+    }
+
+
+
 
     var tabsEl = [];
     $(".product-tabs_list li").each(function() {
@@ -397,18 +425,19 @@ $(document).ready(function() {
         }
     });
 
-    // $('.main-logo').fadeIn();
-
-    // $(".hamburger").click(function() {
-    //     $(this).toggleClass("is-active");
-    // });
-
     // Mobile menu =============================================================
     $('.burger-main').click(function() {
         $('.hidden-menu').toggleClass('nav-show');
         $('.hidden-menu').css('width', '100%');
-        // $('body').css('overflow','hidden');
-        $('.overlay').fadeIn();
+        var checkBg = $("div").is(".header-main_bg");
+        var checkSearchMain = $("div").is("#main-search");
+        if (checkBg) {
+            $(".header-main_bg").addClass('blurHeader');
+        }
+        if (checkSearchMain) {
+            $("#main-search").css('opacity', '0');
+        }
+        // $('.overlay').fadeIn();
     });
     $(window).resize(function() {
         var w = $(window).width();
@@ -418,7 +447,16 @@ $(document).ready(function() {
     });
     $('.hidden-menu_close').click(function() {
         $('.hidden-menu').removeClass('nav-show');
-        $('.overlay').fadeOut();
+        var checkBg = $("div").is(".header-main_bg");
+        var checkSearchMain = $("div").is("#main-search");
+
+        if (checkBg) {
+            $(".header-main_bg").removeClass('blurHeader');
+        }
+        if (checkSearchMain) {
+            $("#main-search").css('opacity', '1');
+        }
+        // $('.overlay').fadeOut();
     });
 
     $('.sections-item').mouseenter(function() {
@@ -426,13 +464,14 @@ $(document).ready(function() {
         $(this).find('.sections-blur').stop().fadeOut();
         $(this).find('.sections-menu').stop().fadeIn();
         $(this).find('.sections-arrow').stop().fadeOut();
-
+        $(this).find('.sections-item_arrow').stop().fadeOut();
     });
     $('.sections-item').mouseleave(function() {
         $(this).removeClass('active');
         $(this).find('.sections-blur').stop().fadeIn();
         $(this).find('.sections-menu').css('display', 'none');
         $(this).find('.sections-arrow').stop().fadeIn();
+        $(this).find('.sections-item_arrow').stop().fadeIn();
     });
 
     $('.header-main_link a').click(function(e) {
@@ -455,85 +494,5 @@ $(document).ready(function() {
             scrollTop: currentBlockoffset
         }, 500);
     }
-
-
-
-    //
-    // // send message ============================================================
-    // $(".form-reserv").submit(function () {
-    //     var inpFirst = $(this).find('.inp_first');
-    //     var inpSecond = $(this).find('.inp_second');
-    //     var inpFirstInner = $(this).find('.inp_first input');
-    //     var inpSecondInner = $(this).find('.inp_second input');
-    //
-    //     var emptyFirst = false;
-    //     var emptySecond = false;
-    //
-    //     if (inpFirstInner.val() == "") {
-    //         emptyFirst = true;
-    //     }
-    //     if(inpSecondInner.val() == ""){
-    //         var emptySecond = true;
-    //     }
-    //     if (emptyFirst == true) {
-    //         inpFirst.addClass("error-input");
-    //         inpFirstInner.focus();
-    //     }
-    //     if (emptySecond == true) {
-    //         inpSecond.addClass("error-input");
-    //         inpSecondInner.focus();
-    //     }else{
-    //         var form_data = $(this).serialize();
-    //         $.ajax({
-    //             type: "POST",
-    //             url: "/sendmessage.php",
-    //             data: form_data,
-    //             success: function () {
-    //                 cleanTnanks(this);
-    //             }
-    //         });
-    //     }
-    //     return false;
-    // });
-    // function cleanTnanks(form) {
-    //     $('.inp_first').removeClass("error-input");
-    //     $('.inp_second').removeClass("error-input");
-    //
-    //     $(".inp_first input").val("");
-    //     $(".inp_second input").val("");
-    //
-    //     $('.reservation-modal').hide();
-    //     $('.modal-thanks').fadeIn();
-    // };
-    //
-    // // custom select ===========================================================
-    // $('select').selectric();
-    //
-    // // modal reservation =======================================================
-    // $('.modal-show').click(function() {
-    //     $('.overlay').fadeIn();
-    //     $('.reservation-modal').fadeIn();
-    //     $('.close-modal').click(function() {
-    //         $('.overlay').fadeOut();
-    //         $('.reservation-modal').fadeOut();
-    //         $('.modal-thanks').fadeOut();
-    //     });
-    //     $('.overlay').click(function() {
-    //         $('.overlay').fadeOut();
-    //         $('.reservation-modal').fadeOut();
-    //         $('.modal-thanks').fadeOut();
-    //     });
-    // });
-    //
-    // // slider ==================================================================
-    // var swiper = new Swiper('.swiper-container', {
-    //     slidesPerView: 'auto',
-    //     //   spaceBetween: 83,
-    //     loop: true,
-    //     pagination: {
-    //         el: '.swiper-pagination',
-    //         clickable: true,
-    //     },
-    // });
 
 });

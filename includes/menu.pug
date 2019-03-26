@@ -25,9 +25,9 @@
 					|проконсультируют вас
 				.contactRecall-inp
 					label
-						input(type="text" placeholder="Имя*")
+						input(type="text" placeholder="Имя*" required)
 					label        
-						input(type="text" placeholder="Телефон*")
+						input(type="text" placeholder="Телефон*" required)
 				.contactRecall-text
 					textarea(placeholder="Добавить комментарий")            
 				.capcha
@@ -63,11 +63,18 @@
 
 	.hidden-menu_item
 		.hidden-menu_social
-			a(href="#")
-				img(src="img/fb-icon.png")
-			a(href="#")
-				img(src="img/twitt-icon.png")
-			a(href="#")
-				img(src="img/inst-icon.png")
-			a(href="#")
-				img(src="img/g-icon.png")
+			a(href="#").fb-link
+				img(src="img/fb-icon-g.png").fb-g
+				img(src="img/fb-icon.png").fb-b
+
+			a(href="#").twitt-link
+				img(src="img/twitt-icon.png").twitt-g
+				img(src="img/twitt-icon-b.png").twitt-b
+
+			a(href="#").inst-link
+				img(src="img/inst-icon.png").inst-g
+				img(src="img/inst-icon-b.png").inst-b
+
+			a(href="#").google-link
+				img(src="img/g-icon.png").google-g
+				img(src="img/g-icon-b.png").google-b
