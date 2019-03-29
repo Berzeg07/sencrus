@@ -1,5 +1,12 @@
 $(document).ready(function() {
 
+    var checkCompLine = $('div').is('.aboutCompany');
+    if(checkCompLine){
+        $('.footer-item_right').addClass('activeLine');
+    }
+    $('.equipment').hover(function(){
+        $('.activeLine').toggleClass('activeLeft');
+    });
 
 
     //Detect Closest Edge
@@ -169,6 +176,7 @@ $(document).ready(function() {
     });
 
     $('.actionsList-item_img').click(function() {
+        $('.actionsList').css('z-index','unset');
         $(this).parents('.actionsList-item').find('.actionsModal').addClass('active');
         var attrBg = $(this).find('img').attr('src');
         $('.footer .overlay').css({
@@ -178,6 +186,7 @@ $(document).ready(function() {
         $('.footer .overlay').fadeIn();
     });
     $('.actionsModal-close').click(function() {
+        $('.actionsList').css('z-index','2');
         $('.actionsModal').removeClass('active');
         $('.footer .overlay').fadeOut();
     });
@@ -429,7 +438,7 @@ $(document).ready(function() {
         navText: ['<div class="left"></div>', '<div class="right"></div>'],
         responsive: {
             0: {
-                items: 1
+                items: 3
             },
             768: {
                 items: 6
