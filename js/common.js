@@ -1,5 +1,16 @@
 $(document).ready(function() {
 
+    $('.form-btn').click(function(){
+        $(this).css('display','none');
+        $('.form-thanks').css('display','flex');
+        setTimeout(fadeFormThanks, 3000);
+    });
+
+    function fadeFormThanks(){
+        $('.form-btn').css('display','block');
+        $('.form-thanks').css('display','none');
+    }
+
     var checkCompLine = $('div').is('.aboutCompany');
     if(checkCompLine){
         $('.footer-item_right').addClass('activeLine');
@@ -44,8 +55,6 @@ $(document).ready(function() {
             var x = e.pageX - this.offsetLeft;
             var y = e.pageY - this.offsetTop;
             var edge = closestEdge(x, y, this.clientWidth, this.clientHeight);
-            // var overlay = this.childNodes[1];
-            // var image = this.childNodes[0];
 
             var overlay = this.children[1];
             var image = this.children[0];
@@ -476,9 +485,6 @@ $(document).ready(function() {
         $('.footer-tab_link_li a').addClass('active');
     }
 
-
-
-
     var tabsEl = [];
     $(".product-tabs_list li").each(function() {
         tabsEl.push(this.innerHTML);
@@ -553,7 +559,6 @@ $(document).ready(function() {
         if (checkContactBox) {
             setTimeout(function() {
                 $("#contactHeader").fadeIn();
-                // $("#contactHeader").css('display','flex');
             }, 800);
             setTimeout(function() {
                 $('.headerRight-box').css('width', 'unset');
